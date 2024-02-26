@@ -22,4 +22,3 @@ Install Using npm
 ## Support
 
 For support, email Abhikdas654@gmail.com 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
