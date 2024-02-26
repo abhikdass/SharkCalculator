@@ -1,0 +1,119 @@
+.show-btncal {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  background-color: white;
+}
+
+@media (min-width: 800px) {
+  .show-btncal {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
+/* styles/PaymentOptions.css */
+.payment-options-container {
+  margin-top: 10px;
+  grid-column-start: 1; /* Adjust as needed */
+  grid-column-end: 6; 
+  justify-content: center; 
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+
+}
+
+.payment-options-select {
+  padding:  8px;
+  font-size: 16px;
+  border: 8px solid #ccc;
+  border-radius: 40px;
+  background-color: #fff;
+  color: #c41d1d;
+  outline: none;
+
+}
+
+.payment-options-select:focus {
+  border-color: #007bff;
+}
+
+.payment-options-select option {
+  font-size: 20px;
+}
+
+.equal {
+  grid-column-start: 4;
+  grid-column-end: 6;
+}
+.opt{
+  color:red;
+  font-size: large;
+  grid-column-start: 0;
+  grid-column-end: 3;
+}
+.add{
+  color:red;
+  font-size: large;
+  grid-column-start: 4;
+  grid-column-end: 6;
+}
+.btncal:last-child {
+  font-weight: medium;
+  font-size: 40px;
+  width: 110px;
+  height: 50px;
+  border-radius: 10px;
+  color: white;
+  background-color: #6dd5ed;
+}
+
+.clr {
+  color: #d66d75;
+}
+
+.exp {
+  color: #06beb6;
+}
+
+.btncal {
+  width: 60px;
+  height: 60px;
+  margin: 6px auto;
+  font-size: 24px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 50%;
+  background: none;
+  border: 0px;
+  user-select: none;
+}
+
+@media (min-width: 800px) {
+  .btncal:hover {
+    background-color: #6dd5ed;
+    color: white;
+    transition: background-color 0.3s ease;
+    border-radius: 50%;
+  }
+
+  .btncal:active,
+  .btncal.touched {
+    background-color: #48b1bf;
+    color: white;
+    transition: background-color 0.3s ease;
+    border-radius: 50%;
+  }
+
+  .btncal:active {
+    transform: scale(0.9);
+  }
+
+  .btncal.touched {
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .btncal:active {
+    transform: scale(0.9);
+  }
+}
