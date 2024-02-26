@@ -1,22 +1,3 @@
-# Balance Calculator
-
-## [Live Link](https://balance-calculator-rahulfordev.netlify.app/)
-
-## Features:
-
-- Transaction Management: Users can add, edit, and delete
-  transactions.
-
-- Total Balance Display: The application displays the total
-  balance of all transactions.
-
-## TOOLS AND TECHNOLOGIES USED:
-
-- Context API: Used for state management, allowing components
-  to share state without prop drilling.
-
-- Reducer Function: Implemented for managing state transitions
-  in response to different actions.
 
 ## Installation
 
