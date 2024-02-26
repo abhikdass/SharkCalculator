@@ -1,24 +1,24 @@
 
+# SharkTank-Calculator
+
+The inspiration for this idea originated from Shark Tank. An enterprising individual conceptualized a physical calculator specifically tailored for this purpose. Essentially, it's a calculator integrated with a ledger, designed to be invaluable for shop owners.
+
 ## Installation
 
-1. Clone the repository:
+Install Using npm
 
-   ```
-   git clone https://github.com/Rahulfordev/Balance-Calculator.git
-   ```
+```bash
+  git clone https://github.com/abhikdass/SharkCalculator.git
+  cd SharkCalculator
+  npm Install
+  npm run dev
+```
+    
+## Authors
 
-2. Install dependencies:
+- [@abhikdass](https://github.com/abhikdass)
 
-   ```
-   npm install
-   ```
 
-3. Run the application:
+## Support
 
-   ```
-   npm run dev
-   ```
-
-4. Open [http://localhost:5173/](http://localhost:5173/) to view it in the browser.
-# SharkCalculator
-# SharkCalculator
+For support, email Abhikdas654@gmail.com 
