@@ -8,16 +8,13 @@ import TransactionList from "./components/TransactionList";
 import { GlobalProvider } from "./context/GlobalState";
 
 export function BalanceCalculator() {
-  // Your balance calculator component logic here
   return (
     <GlobalProvider>
       <Title />
-      <div className="container">
-        <Balance />
-        <IncomeExpense />
-        <TransactionList />
-        <AddTransaction />
-      </div>
+      <Balance />
+      <IncomeExpense />
+      <TransactionList />
+      <AddTransaction />
     </GlobalProvider>
   );
 }

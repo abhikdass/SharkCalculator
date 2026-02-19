@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import {Display} from "./Display";
 import {Buttons} from "./Buttons";
-import "./styles/Calculator.css";
 import { evaluate, round } from "mathjs";
 import { GlobalContext, GlobalProvider } from "../context/GlobalState";
 import AddTrans from "./AddTrans";
@@ -173,26 +172,18 @@ const getMonthName = (monthIndex) => {
   };
 
   return (
-    <>
     <GlobalProvider>
-
-      <div className="cntt">
-        <div className="main">
-          <Display input={input} setInput={setInput} answer={answer} />
-          <Buttons
-            inputHandler={inputHandler}
-            clearInput={clearInput}
-            backspace={backspace}
-            changePlusMinus={changePlusMinus}
-            calculateAns={calculateAns}
-            OptionHandler={OptionHandler}
-          />
-          <AddTrans answer={answer}/>
-        </div>
-      </div>
+      <Display input={input} setInput={setInput} answer={answer} />
+      <Buttons
+        inputHandler={inputHandler}
+        clearInput={clearInput}
+        backspace={backspace}
+        changePlusMinus={changePlusMinus}
+        calculateAns={calculateAns}
+        OptionHandler={OptionHandler}
+      />
+      <AddTrans answer={answer}/>
     </GlobalProvider>
-
-    </>
   );
 }
 

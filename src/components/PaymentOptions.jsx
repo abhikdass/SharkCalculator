@@ -1,6 +1,5 @@
 // PaymentOptions.jsx
 import React from 'react';
-import "./styles/Buttons.css";
 
 export function PaymentOptions({ options, selectedOption, onSelectOption }) {
   return (

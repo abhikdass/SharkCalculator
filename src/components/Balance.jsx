@@ -7,18 +7,11 @@ const Balance = () => {
   const amounts = transactions.map((transaction) => transaction.amount);
   const total = amounts.reduce((acc, curr) => (acc += curr), 0);
 
-  const red = {
-    color: "#c0392b",
-  };
-
-  const green = {
-    color: "#2ecc71",
-  };
   return (
     <>
       <h4>Your Balance</h4>
       <h1>
-        Total: <span style={total >= 0 ? green : red}>₹{total}</span>
+        Total: <span className={total >= 0 ? 'money plus' : 'money minus'}>₹{total}</span>
       </h1>
     </>
   );

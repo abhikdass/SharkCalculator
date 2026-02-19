@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { GlobalContext } from "../context/GlobalState";
-import "./styles/Buttons.css";
 import {PaymentOptions} from './PaymentOptions';
 
 const getOrdinalSuffix = (number) => {

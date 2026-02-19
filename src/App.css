@@ -1,162 +1,450 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
+/* ═══════════════════════════════════════════
+   THEME VARIABLES
+   ═══════════════════════════════════════════ */
 :root {
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --primary: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --accent: #a5b4fc;
+  --bg: linear-gradient(145deg, #eef2ff 0%, #faf5ff 40%, #ede9fe 100%);
+  --card-bg: #ffffff;
+  --card-bg-alt: #f5f3ff;
+  --border: rgba(99, 102, 241, 0.12);
+  --text: #1e1b4b;
+  --text-mid: #4c4678;
+  --text-light: #a5a0c8;
+  --danger: #ef4444;
+  --danger-light: #fef2f2;
+  --success: #22c55e;
+  --success-light: #f0fdf4;
+  --shadow-sm: 0 1px 2px rgba(99, 102, 241, 0.06);
+  --shadow: 0 2px 8px rgba(99, 102, 241, 0.1);
+  --shadow-md: 0 4px 16px rgba(99, 102, 241, 0.12);
+  --radius: 14px;
+  --radius-sm: 10px;
 }
 
-* {
-  box-sizing: border-box;
-}
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  background-color: #f7f7f7;
+  background: var(--bg);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  margin: 0;
   font-family: 'Lato', sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
 }
 
+/* ═══════════════════════════════════════════
+   CARD CONTAINER
+   ═══════════════════════════════════════════ */
 .container {
-  margin: 30px auto;
-  width: auto;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 5px;
+  margin: 24px auto;
+  width: 100%;
+  max-width: 400px;
+  padding: 24px;
+  border: 0;
+  border-radius: var(--radius);
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow-md);
 }
 
-h1 {
-  letter-spacing: 1px;
-  margin: 0;
-}
-
+/* ═══════════════════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════════════════ */
+h1 { letter-spacing: 0.5px; margin: 0; font-size: 22px; }
+h2 { margin: 0 0 12px; color: var(--primary); font-size: 20px; font-weight: 700; }
 h3 {
-  border-bottom: 1px solid #bbb;
-  padding-bottom: 10px;
-  margin: 40px 0 10px;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 8px;
+  margin: 24px 0 12px;
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
-
 h4 {
   margin: 0;
   text-transform: uppercase;
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
 }
 
-.inc-exp-container {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  padding: 20px;
+/* ═══════════════════════════════════════════
+   HOME PAGE
+   ═══════════════════════════════════════════ */
+.home-container { text-align: center; min-width: 340px; }
+
+.home-title {
+  color: var(--primary);
+  font-size: 26px;
+  margin-bottom: 4px;
+  font-weight: 800;
+}
+
+.home-subtitle {
+  color: var(--text-light);
+  margin: 0 0 28px;
+  font-size: 14px;
+}
+
+.option-cards {
   display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.inc-exp-container > div {
-  flex: 1;
-  text-align: center;
-}
-
-.inc-exp-container > div:first-of-type {
-  border-right: 1px solid #dedede;
-}
-
-.money {
-  font-size: 20px;
-  letter-spacing: 1px;
-  margin: 5px 0;
-}
-
-.money.plus {
-  color: #2ecc71;
-}
-
-.money.minus {
-  color: #c0392b;
-}
-
-label {
-  display: inline-block;
-  margin: 10px 0;
-}
-
-input[type='text'],
-input[type='number'] {
-  border: 1px solid #dedede;
-  border-radius: 2px;
-  display: block;
+.option-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  cursor: pointer;
+  font-family: inherit;
   font-size: 16px;
-  padding: 10px;
-  width: 100%;
+  text-align: left;
+  transition: all 0.2s ease;
 }
 
+.option-card:hover {
+  border-color: var(--primary-light);
+  background: var(--card-bg-alt);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+.option-icon { font-size: 28px; line-height: 1; }
+.option-label { font-weight: 700; color: var(--text); }
+
+/* ═══════════════════════════════════════════
+   BACK BUTTON
+   ═══════════════════════════════════════════ */
+.back-btn {
+  background: var(--card-bg-alt);
+  border: 1px solid var(--border);
+  color: var(--primary);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 14px;
+  margin-bottom: 16px;
+  border-radius: 20px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* ═══════════════════════════════════════════
+   PRIMARY BUTTON (.btn)
+   ═══════════════════════════════════════════ */
 .btn {
   cursor: pointer;
-  background-color: #24b9eb;
-  box-shadow: var(--box-shadow);
+  background: var(--primary);
   color: #fff;
   border: 0;
   display: block;
-  font-size: 16px;
-  font-weight: bold;
-  margin: 10px 0 30px;
-  padding: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 12px 0 16px;
+  padding: 12px;
   width: 100%;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  letter-spacing: 0.3px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
 }
 
-
-.btn:focus,
-.delete-btn:focus {
-  outline: 0;
+.btn:hover {
+  background: var(--primary-dark);
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
 }
 
-.list {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 40px;
+.btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
 }
 
-.list li {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  color: #333;
+.btn:focus { outline: 0; }
+
+/* ═══════════════════════════════════════════
+   FORM CONTROLS (balance calculator)
+   ═══════════════════════════════════════════ */
+.form-control label {
+  display: inline-block;
+  margin: 10px 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-mid);
+}
+
+.form-control input[type='text'],
+.form-control input[type='number'] {
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  display: block;
+  font-size: 15px;
+  padding: 10px 12px;
+  width: 100%;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--card-bg);
+  transition: border-color 0.2s ease;
+}
+
+.form-control input:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* ═══════════════════════════════════════════
+   INCOME / EXPENSE BOX
+   ═══════════════════════════════════════════ */
+.inc-exp-container {
+  background: var(--card-bg-alt);
+  padding: 16px;
   display: flex;
   justify-content: space-between;
+  margin: 16px 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.inc-exp-container > div { flex: 1; text-align: center; }
+.inc-exp-container > div:first-of-type { border-right: 1px solid var(--border); }
+
+.money { font-size: 20px; letter-spacing: 0.5px; margin: 6px 0 0; font-weight: 700; }
+.money.plus { color: var(--success); }
+.money.minus { color: var(--danger); }
+
+/* ═══════════════════════════════════════════
+   TRANSACTION LIST
+   ═══════════════════════════════════════════ */
+.list { list-style-type: none; padding: 0; margin-bottom: 20px; }
+
+.list li {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
-  padding: 10px;
-  margin: 10px 0;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border-radius: var(--radius-sm);
+  transition: box-shadow 0.2s ease;
 }
 
-.list li.plus {
-  border-right: 5px solid #2ecc71;
-}
+.list li:hover { box-shadow: var(--shadow); }
 
-.list li.minus {
-  border-right: 5px solid #c0392b;
-}
+.list li.plus { border-left: 4px solid var(--success); }
+.list li.minus { border-left: 4px solid var(--danger); }
+
+.tx-text { color: var(--text); text-transform: capitalize; font-weight: 600; font-size: 14px; }
+.tx-date { color: var(--text-light); font-size: 12px; }
+.tx-amount-plus { color: var(--success); font-weight: 700; font-size: 14px; }
+.tx-amount-minus { color: var(--danger); font-weight: 700; font-size: 14px; }
 
 .delete-btn {
   cursor: pointer;
-  background-color: #e74c3c;
+  background: var(--danger);
   border: 0;
   color: #fff;
-  font-size: 20px;
-  line-height: 20px;
-  padding: 2px 5px;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 3px 6px;
   position: absolute;
   top: 50%;
   left: 0;
   transform: translate(-100%, -50%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
+  border-radius: 4px;
 }
 
-.list li:hover .delete-btn {
-  opacity: 1;
+.delete-btn:focus { outline: 0; }
+.list li:hover .delete-btn { opacity: 1; }
+
+/* ═══════════════════════════════════════════
+   CALCULATOR — DISPLAY
+   ═══════════════════════════════════════════ */
+.display {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px 20px;
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+  border-radius: var(--radius) var(--radius) 0 0;
+  margin: 0 -24px;
+  margin-top: -24px;
 }
 
-@media (max-width: 320px) {
-  .container {
-    width: 300px;
+.display .input,
+.display .value {
+  padding: 8px 12px;
+  text-align: right;
+  background: transparent;
+  color: #fff;
+  border: 0;
+  letter-spacing: 1px;
+  font-family: inherit;
+  width: 100%;
+}
+
+.display .input { font-size: 32px; font-weight: 600; }
+.display .value { font-size: 16px; opacity: 0.8; }
+.display .input::placeholder,
+.display .value::placeholder { color: rgba(255, 255, 255, 0.5); }
+.display .input:focus-visible,
+.display .value:focus-visible { outline: none; }
+
+/* ═══════════════════════════════════════════
+   CALCULATOR — BUTTON GRID
+   ═══════════════════════════════════════════ */
+.show-btncal {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  padding: 12px 0;
+  margin: 0 -24px;
+  padding-left: 12px;
+  padding-right: 12px;
+  background: var(--card-bg-alt);
+}
+
+.btncal {
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 56px;
+  margin: 0 auto;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  user-select: none;
+  font-family: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.15s ease;
+}
+
+.btncal.exp {
+  color: var(--primary);
+  background: var(--card-bg);
+  border-color: rgba(99, 102, 241, 0.15);
+}
+
+.btncal.clr {
+  color: var(--danger);
+  background: var(--danger-light);
+  border-color: rgba(239, 68, 68, 0.12);
+}
+
+/* Equal button */
+.btncal.equal {
+  grid-column: 4 / 6;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: auto;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary);
+  border: 0;
+  box-shadow: var(--shadow);
+}
+
+.btncal.equal:hover {
+  background: var(--primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+/* Hover & press */
+@media (hover: hover) {
+  .btncal:hover {
+    background: var(--card-bg-alt);
+    border-color: var(--primary-light);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow);
   }
+
+  .btncal.clr:hover {
+    background: #fee2e2;
+    border-color: var(--danger);
+  }
+}
+
+.btncal:active {
+  transform: scale(0.92);
+  box-shadow: none;
+}
+
+.btncal.touched { pointer-events: none; }
+
+/* ═══════════════════════════════════════════
+   PAYMENT SELECT (shark calculator)
+   ═══════════════════════════════════════════ */
+.payment-options-container {
+  grid-column: 1 / 6;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+.payment-options-select {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  border: 2px solid var(--border);
+  border-radius: 20px;
+  background: var(--card-bg);
+  color: var(--text);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.payment-options-select:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.payment-options-select option { font-size: 14px; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 420px) {
+  .container { margin: 12px; padding: 16px; border-radius: var(--radius-sm); }
+  .display { margin: 0 -16px; margin-top: -16px; border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+  .show-btncal { margin: 0 -16px; padding-left: 8px; padding-right: 8px; }
+  .btncal { font-size: 16px; max-width: 48px; }
+  .btncal.equal { height: 42px; font-size: 22px; }
 }

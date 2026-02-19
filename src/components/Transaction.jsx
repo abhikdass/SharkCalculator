@@ -10,13 +10,9 @@ const Transaction = ({ transaction }) => {
   const sign = amount < 0 ? "-" : "+";
   return (
     <li className={amount < 0 ? "minus" : "plus"}>
-      <span style={{ color: 'black' , textTransform: 'capitalize'}}>
-      {text}
-      </span>
-      <span style={{ color: 'gray' }}>
-        {date}
-      </span>
-      <span style={{ color: sign === '+' ? 'green' : 'red' }}>
+      <span className="tx-text">{text}</span>
+      <span className="tx-date">{date}</span>
+      <span className={sign === '+' ? 'tx-amount-plus' : 'tx-amount-minus'}>
         {sign} {Math.abs(amount)}{" Rs"}
       </span>
       <button onClick={() => deleteTransaction(id)} className="delete-btn">
